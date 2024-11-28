@@ -1,7 +1,7 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import authReducer from "./auth/authSlice";
 import counterReducer from "./counter/counterSlice";
-import productReducer from "./products/productSlice";
+import productReducer from "./products/ProductSlice";
 import cartReducer from "./Cart/cartsSlice"
 
 
