@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Modal from "../Modal";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAllProducts } from "../../redux/products/ProductsActions";
+import { getAllProducts } from "../../redux/products/productsActions"
 
 export default function ProductCard({ id, url, name, brand, price, category }) {
   const [isOpen, setIsOpen] = useState(false);
