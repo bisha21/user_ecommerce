@@ -4,7 +4,7 @@ import Tittle from "../../components/Tittle";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategory, getAllProducts } from "../../redux/products/ProductsActions";
+import { getAllProducts, getAllCategory } from "../../redux/products/ProductsActions";
 import ProductFilter from "../../components/products/Filter";
 import { resetQuery } from "../../redux/products/ProductSlice";
 export default function List() {
