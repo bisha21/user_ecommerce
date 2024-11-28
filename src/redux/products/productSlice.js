@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllCategory, getAllProducts } from "./ProductsActions";
+import { getAllCategory, getAllProducts } from "./productsActions";
 
 const productSlice = createSlice({
     name: "product",
