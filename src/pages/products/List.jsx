@@ -6,7 +6,7 @@ import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, getAllCategory } from "../../redux/products/ProductsActions";
 import ProductFilter from "../../components/products/Filter";
-// import { resetQuery } from "../../redux/products/ProductSlice";
+import { resetQuery } from "../../redux/products/ProductSlice";
 export default function List() {
   const dispatch = useDispatch();
   const { loading, products, query} = useSelector((state) => state.products);
@@ -21,8 +21,7 @@ export default function List() {
   }
   function handleReset()
   {
-    // dispatch(resetQuery());
-    console.log("hi")
+    dispatch(resetQuery());
   }
 
   return (
