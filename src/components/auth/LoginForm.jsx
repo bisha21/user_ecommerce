@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/auth/authActions";
 import Spinner from "../Spinner";
-import { useEffect } from "react";
 
 export default function LoginForm() {
     const navigate = useNavigate();

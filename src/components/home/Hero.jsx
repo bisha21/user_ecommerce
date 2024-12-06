@@ -14,7 +14,7 @@ function Hero() {
 
 
     return (
-        <div className="relative">
+        <div className="-z-50">
             <Carousel
             autoPlay
             showThumbs={false}
