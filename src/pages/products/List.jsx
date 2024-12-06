@@ -7,14 +7,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, getAllCategory } from "../../redux/products/ProductsActions";
 import ProductFilter from "../../components/products/Filter";
 import { resetQuery } from "../../redux/products/ProductSlice";
+import axios from 'axios';
+
 export default function List() {
   const dispatch = useDispatch();
   const { loading, products, query} = useSelector((state) => state.products);
 
-  useEffect(() => {
-    dispatch(getAllProducts(query));
-    dispatch(getAllCategory());
-  }, [dispatch, query]);
+  // useEffect(() => {
+  //   const controller= new AbortController();
+  //   dispatch(getAllProducts(query));
+  //   dispatch(getAllCategory());
+  //   return () => {
+  //     controller.abort();
+
+  //   }
+  // }, [dispatch, query]);
+
+useEffect(() => {
+  const source = axios.CancelToken.source(); // Create a cancel token
+
+  dispatch(getAllProducts({ query, cancelToken: source.token }));
+  dispatch(getAllCategory());
+
+  return () => {
+    source.cancel("Operation canceled by the user."); // Cancel the request on cleanup
+  };
+}, [dispatch, query]);
+
 
   if (loading) {
     return <Loader />;

@@ -6,6 +6,8 @@ const getAllProducts = createAsyncThunk(
   async ({ limit, sort, filters }, { rejectWithValue }) => {
     try {
       const response = await getProducts({ limit, sort, filters });
+      console.log("Thunk Parameters:", { limit, sort, filters }); // Log input
+
 
       return response.data;
     } catch (error) {

@@ -13,8 +13,9 @@ const productSlice = createSlice({
     },
     reducers: {
         setQuery: (state, action) => {
-            state.query.limit = action.payload
-            console.log(state.query)
+            state.query = { ...state.query, ...action.payload };
+
+            console.log("hi i am from slics",state.query.limit)
         },
         setSort: (state, action) => {
             state.query.sort = action.payload
