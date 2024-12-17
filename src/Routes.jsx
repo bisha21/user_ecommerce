@@ -35,6 +35,7 @@ export default function Routes() {
         {
           element: <AuthLayout />, // Auth-protected routes
           children: [
+           
             {
               path: ABOUT_ROUTE,
               element: <About />,

@@ -10,6 +10,7 @@ import { logoutUser } from '../redux/auth/authSlice';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenu, setIsMobileMenu] = useState(!isOpen);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const isAuthenticated = Boolean(user);
@@ -40,10 +41,10 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <ul
-          className={`flex flex-col items-center gap-4 w-48 bg-white font-bold shadow-2xl px-4 absolute right-0 top-14 z-50 md:flex-row md:gap-6 md:static md:shadow-none ${
-            isOpen ? '' : 'hidden' 
+          className={`flex flex-col items-center gap-4 w-48 bg-white font-bold shadow-2xl px-4 absolute right-0 top-14 z-50 md:flex-row md:gap-6 md:static md:shadow-none md:inline-flex ${
+            isOpen ? 'block' : 'hidden'
           }
-          md:${!isOpen ? '':'hidden'}`}
+        `}
         >
           {navMenu
             .filter((menu) => menu.auth === isAuthenticated)

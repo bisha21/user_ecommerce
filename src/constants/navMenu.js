@@ -11,7 +11,7 @@ import {
   
   const navMenu = [
     { 
-      auth:false,
+      auth:true,
       route: HOME_ROUTE,
       label: "Home",
     },
