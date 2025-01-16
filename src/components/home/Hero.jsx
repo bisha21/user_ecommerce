@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
-import cetaphil from "../../images/cetaphil.avif";
-import jacket from "../../images/jacket.png";
-import tv from "../../images/samsung-tv.png";
+import man from "../../images/coat.avif";
+import woman from "../../images/Arnakali.jpeg"
+import kids from "../../images/Kids.jpg"
 import CarpuselItem from "./CarpuselItem";
 import { useSelector } from "react-redux";
 import Feature from "./Features";
@@ -21,11 +21,13 @@ function Hero() {
             showIndicators={false}
             showArrows={false}
             infiniteLoop={true}
-            className="bg-teal-600"
+            className="bg-[#1a202c]"
         >
-            <CarpuselItem label="SAMSUNG QLED" imageSrc={tv}/>
-            <CarpuselItem label="LEVIS JACKET" imageSrc={jacket}/>
-            <CarpuselItem label="CETAPHIL MOISTURIZER" imageSrc={cetaphil}/>
+            <CarpuselItem label="Vouge Man Shirt" imageSrc={man} 
+            
+            />
+            <CarpuselItem label="Woman formal Dress" imageSrc={woman}/>
+            <CarpuselItem label="Children Princess Dress" imageSrc={kids}/>
 
         </Carousel>
         

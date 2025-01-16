@@ -8,10 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "proxy":"http//:localhost:5000"
+    "proxy": "http//:localhost:5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "@stripe/stripe-js": "^5.5.0",
     "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -20,13 +21,17 @@
     "react-redux": "^9.1.2",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.26.2",
+    "react-slick": "^0.30.3",
     "react-toastify": "^10.0.5",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "slick-carousel": "^1.8.1",
+    "stripe": "^17.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
@@ -39,4 +44,3 @@
     "vite": "^5.4.1"
   }
 }
-

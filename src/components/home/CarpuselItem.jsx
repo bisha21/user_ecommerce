@@ -12,7 +12,15 @@ export default function CarpuselItem({label,imageSrc}) {
                     <Link to={PRODUCTS_ROUTE} className="flex gap-2 items-center justify-center bg-black text-white font-semibold px-4 py-2 rounded-xl drop-shadow-2xl"
                     >Shop now <FaArrowRight color="white" width={20} /> </Link>
                 </div>
-                <img src={imageSrc}  />
+               <div className='object-cover'>
+               <div className="overflow-hidden bg-gray-100 rounded-lg">
+          <img
+          
+            className="object-fill mx-auto  h-[500px] " // Fixed height and object-fit to cover
+            src={imageSrc}
+          />
+        </div>
+               </div>
             </div>
   )
 }

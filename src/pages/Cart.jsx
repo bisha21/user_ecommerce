@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { deleteProduct, updateProduct } from "../redux/Cart/cartsSlice";
 import { useState } from "react";
-import OrderForm from "../components/products/orderForm";
+import OrderForm from "../components/products/OrderForm";
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ function Cart() {
     setSelectedProduct(null); // Reset the selected product
   };
 
-  if (products.length === 0) return <div>0 Products</div>;
+  if (products.length === 0) return <div className="text-center mt-10">No Products in Cart</div>;
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg flex justify-center">
@@ -110,5 +110,4 @@ function Cart() {
     </div>
   );
 }
-
 export default Cart;

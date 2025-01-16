@@ -29,7 +29,7 @@ export default function Navbar() {
       : 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0';
 
   return (
-    <nav className="w-full shadow-2xl bg-white sticky px-2 md:px-8 border-green-400 z-50">
+    <nav className="w-full shadow-xl bg-teal-100 sticky px-2 md:px-8 border-green-400 z-50 ">
       <div className="flex justify-between items-center py-2 md:py-4">
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -41,7 +41,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <ul
-          className={`flex flex-col items-center gap-4 w-48 bg-white font-bold shadow-2xl px-4 absolute right-0 top-14 z-50 md:flex-row md:gap-6 md:static md:shadow-none md:inline-flex ${
+          className={`flex flex-col items-center gap-4 w-48 font-bold shadow-2xl px-4 absolute right-0 top-14 z-50 md:flex-row md:gap-6 md:static md:shadow-none md:inline-flex ${
             isOpen ? 'block' : 'hidden'
           }
         `}

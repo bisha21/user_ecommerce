@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter, setQuery, setSort } from "../../redux/products/ProductSlice";
+import { resetQuery, setFilter, setQuery, setSort } from "../../redux/products/ProductSlice";
+import Tittle from "../Tittle";
 
 function ProductFilter() {
   const dispatch = useDispatch();
@@ -27,9 +28,14 @@ function ProductFilter() {
     // Set category filter in Redux state
     dispatch(setFilter({ category: value }));
   }
+  function handleReset() {
+    dispatch(resetQuery());
+  }
+
 
   return (
-    <div className="bg-white mb-8 mx-8 px-4 py-3 rounded-md drop-shadow-md grid items-center grid-cols-4 justify-between">
+    <div className="bg-white mb-8 mx-8 px-4 py-3 rounded-md drop-shadow-md grid items-center grid-cols-5 justify-between">
+      {/* <Tittle label="Filters" /> */}
       {/* Name Filter */}
       <div className="flex gap-2 text-md">
         <label htmlFor="name">Name:</label>
@@ -91,6 +97,11 @@ function ProductFilter() {
           <option value="100">100</option>
         </select>
       </div>
+      <div className="flex items-center gap-4 p-2 bg-white rounded-md">
+        <button className=" bg-blue-800 hover:bg-blue-500 px-4 py-2 text-white " onClick={handleReset}>
+            Reset Filter
+          </button>
+    </div>
     </div>
   );
 }
