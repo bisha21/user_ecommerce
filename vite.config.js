@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: './', // Use relative paths for assets
+    base: './code-react', // Use relative paths for assets
     build: {
       outDir: 'dist', // Ensure output directory is correctly named
     },
