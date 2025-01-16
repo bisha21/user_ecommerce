@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import man from "../../images/coat.avif";
 import woman from "../../images/Arnakali.jpeg"
-import kids from "../../images/Kids.jpg"
+import kids from "../../images/kids.jpg"
 import CarpuselItem from "./CarpuselItem";
 import { useSelector } from "react-redux";
 import Feature from "./Features";
