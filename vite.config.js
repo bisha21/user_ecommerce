@@ -9,9 +9,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     base: './', // Use relative paths for assets
-    server: {
-      port: env.VITE_PORT || 3000, // Use the VITE_PORT from .env file
-    },
     build: {
       outDir: 'dist', // Ensure output directory is correctly named
     },
