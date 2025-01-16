@@ -1,15 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Spinner from '../Spinner';
 import createOrder from '../../api/order';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteProduct } from '../../redux/Cart/cartsSlice';
 import { loadStripe } from '@stripe/stripe-js';
-import { FaClosedCaptioning, FaCross } from 'react-icons/fa';
 
-const OrderForm = ({ products, onClose }) => {
+ export const OrderForm = ({ products, onClose }) => {
   const authToken = localStorage.getItem('authToken');
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
@@ -167,4 +164,3 @@ const OrderForm = ({ products, onClose }) => {
   );
 };
 
-export default OrderForm;

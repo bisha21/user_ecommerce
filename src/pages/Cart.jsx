@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { deleteProduct, updateProduct } from "../redux/Cart/cartsSlice";
 import { useState } from "react";
-import OrderForm from "../components/products/OrderForm";
+import { OrderForm } from "../components/products/orderForm";
+
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
