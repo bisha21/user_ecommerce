@@ -3,14 +3,14 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Load environment variables
-  const env = loadEnv(mode, process.cwd(), '');
+  // Load environment variables (prefixed with VITE_)
+  const env = loadEnv(mode, process.cwd());
 
   return {
     plugins: [react()],
-    base: './codit-react', // Use relative paths for assets
+    base: '/', // Serve from the root
     build: {
-      outDir: 'dist', // Ensure output directory is correctly named
+      outDir: 'dist', // Output directory for production build
     },
   };
 });
