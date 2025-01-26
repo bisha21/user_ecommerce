@@ -8,8 +8,7 @@ function ProductFilter() {
 
   // Handle limit changes
   function handleLimit(limit) {
-    dispatch(setQuery({ limit: parseInt(limit, 10) })); // Ensure it's a number
-    console.log("Selected limit:", limit); // Debug log
+    dispatch(setQuery({ limit: parseInt(limit, 10) })); 
   }
   
 
