@@ -1,16 +1,8 @@
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  // Load environment variables (prefixed with VITE_)
-  const env = loadEnv(mode, process.cwd());
-
-  return {
-    plugins: [react()],
-    base: '/', // Serve from the root
-    build: {
-      outDir: 'dist', // Output directory for production build
-    },
-  };
+export default defineConfig({
+  base: './', // Ensure relative paths are used
+  build: {
+    outDir: 'dist', // Default output directory
+  },
 });
