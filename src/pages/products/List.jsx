@@ -17,26 +17,17 @@ export default function List() {
   const dispatch = useDispatch();
   const { loading, products, query } = useSelector((state) => state.products);
 
-  // useEffect(() => {
-  //   const controller= new AbortController();
-  //   dispatch(getAllProducts(query));
-  //   dispatch(getAllCategory());
-  //   return () => {
-  //     controller.abort();
-
-  //   }
-  // }, [dispatch, query]);
-
   useEffect(() => {
-    const source = axios.CancelToken.source(); // Create a cancel token
-
-    dispatch(getAllProducts({ query, cancelToken: source.token }));
+    const controller= new AbortController();
+    dispatch(getAllProducts(query));
     dispatch(getAllCategory());
-
     return () => {
-      source.cancel('Operation canceled by the user.'); // Cancel the request on cleanup
-    };
+      controller.abort();
+
+    }
   }, [dispatch, query]);
+
+
 
   if (loading) {
     return <Loader />;

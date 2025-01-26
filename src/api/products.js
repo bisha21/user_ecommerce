@@ -3,7 +3,7 @@ import config from "../config/config";
 const authToken = localStorage.getItem("authToken");
 
 const getProducts = async ({
-  limit=100,
+  limit=10,
   sort = JSON.stringify({ createdAt: -1 }),
   filters = {},
 }) => {
