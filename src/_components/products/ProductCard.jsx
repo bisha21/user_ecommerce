@@ -15,14 +15,14 @@ export default function ProductCard({
   const { user } = useSelector((store) => store.auth);
 
   return (
-    <div className="w-full h-128 max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl duration-300">
+    <div className="w-full h-72 max-w-sm bg-teal-100/30 border  rounded-lg shadow-xl  hover:shadow-xl duration-300">
       {/* <div className='text-right text-sm font-semibold text-gray-600 px-5 py-2'>
         {category}
       </div> */}
       <Link to={`/products/${id}`}>
-        <div className="overflow-hidden bg-gray-100 rounded-lg">
+        <div className="overflow-hidden bg-teal-100/30 rounded-lg">
           <img
-            className="object-contain mx-auto  h-48" // Fixed height and object-fit to cover
+            className="object-fit mx-auto  h-32 w-32 rounded-full" // Fixed height and object-fit to cover
             src={url}
             alt={name}
           />
@@ -56,7 +56,7 @@ export default function ProductCard({
 
           <Link
             to={user ? `/products/${id}` : '/login'}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            className="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Buy Now
           </Link>

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { deleteProduct, updateProduct } from "../redux/Cart/cartsSlice";
 import { useState } from "react";
-import { OrderForm } from "../components/products/orderForm";
+import { OrderForm } from "../_components/products/orderForm";
 
 
 function Cart() {

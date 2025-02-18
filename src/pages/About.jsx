@@ -1,10 +1,12 @@
-import Tittle from "../components/Tittle";
+import { Button } from "@/components/ui/button";
+import Tittle from "../_components/Tittle";
 
 const About = () => {
   return (
     <section className="py-12 min-h-[80vh]">
       <div className="max-w-screen-xl mx-auto">
         <Tittle label="About Us" />
+        <Button className="mt-8">Contact Us</Button>
         <h2 className="mt-8 mb-4 text-3xl">Introduction</h2>
         <p className="text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis

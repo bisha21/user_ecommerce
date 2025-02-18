@@ -1,6 +1,6 @@
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
-import Tittle from "../components/Tittle";
+import Tittle from "../_components/Tittle";
 
 const Contact = () => {
   return (

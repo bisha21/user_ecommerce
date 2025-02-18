@@ -1,25 +1,36 @@
 import { useSelector } from "react-redux";
-import Hero from "../components/home/Hero";
-import CatagorizedProduct from "../components/home/CatagorizedProduct";
-import ReviewCard from "../components/review/reviewCard";
+import Hero from "../_components/home/Hero";
+import CatagorizedProduct from "../_components/home/CatagorizedProduct";
+import ReviewCard from "../_components/review/reviewCard";
+import NewArrival from "@/_components/products/NewArrivial";
+import Tittle from "@/_components/Tittle";
+import FAQAccordion from "@/_components/home/Accordian";
 
 export default function Home() {
 
   return (
     <>
       <Hero />
-      <section className="py-12 bg-gray-100">
-        <CatagorizedProduct category="Man" className="bg-slate-200"  />
+     <section className="  bg-teal-100 m mx-auto">
+      <Tittle label="Top Buyer" />
+      <NewArrival />
+     </section>
+      <section className="py-12 bg-teal-200/50">
+        <CatagorizedProduct category="Man"  />
       </section>
-      <section className="py-12 bg-gray-200">
-        <CatagorizedProduct category="Women" className="bg-slate-400" />
+      <section className="py-12 bg-teal-100/50">
+        <CatagorizedProduct category="Women" />
       </section>
-      <section className="py-12 bg-gray-300">
+      <section className="py-12 bg-teal-200/50">
         <CatagorizedProduct category="Kids" />
       </section>
-      <section className="py-12 bg-gray-300">
-        <ReviewCard />
+      <section className=" bg-teal-100/50">
+        <ReviewCard  />
       </section>
+      <section className="bg-teal-200/50">
+        <FAQAccordion/>
+      </section>
+
     
     </>
   )

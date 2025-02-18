@@ -29,7 +29,7 @@ export default function Navbar() {
       : 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0';
 
   return (
-    <nav className="w-full shadow-xl bg-teal-100 sticky px-2 md:px-8 border-green-400 z-50 ">
+    <nav className="w-[100vw] over-flow-hidden shadow-xl bg-teal-500 sticky px-2 md:px-8 border-green-400 z-50 ">
       <div className="flex justify-between items-center py-2 md:py-4">
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">

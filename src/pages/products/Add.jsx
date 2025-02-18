@@ -1,9 +1,9 @@
 import { Link, Navigate } from "react-router-dom";
-import ProductForm from "../../components/products/ProductForm";
 import { PRODUCTS_ROUTE } from "../../constants/routes";
 import { FaArrowLeft, FaBackward } from "react-icons/fa";
-import Tittle from "../../components/Tittle";
+import Tittle from "../../_components/Tittle";
 import { FaArrowDown } from "react-icons/fa6";
+import ProductsForm from "../../_components/products/ProductForm";
 
 export default function Add() {
   return (
@@ -22,7 +22,7 @@ export default function Add() {
       <section className="w-full md:w-1/2 mx-auto mt-5 shadow-sm flex flex-col bg-white text-start ">
 
         <div className="">
-          <ProductForm />
+          <ProductsForm />
         </div>
         {/* <Navigate to={ PRODUCTS_ROUTE} > <FaBackward/> Back</Navigate> */}
       </section>

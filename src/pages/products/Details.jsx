@@ -5,14 +5,13 @@ import { PRODUCTS_ROUTE } from '../../constants/routes';
 import { Link, useParams } from 'react-router-dom';
 import { FaCartPlus } from 'react-icons/fa';
 import { BiLeftArrowAlt } from 'react-icons/bi';
-import Tittle from '../../components/Tittle';
-import Spinner from '../../components/Spinner';
+import Tittle from '../../_components/Tittle';
+import Spinner from '../../_components/Spinner';
 import { addProduct } from '../../redux/Cart/cartsSlice';
 import { toast } from 'react-toastify';
-import StarRating from '../../components/startRating';
-import ReviewForm from '../../components/review/reviewForm';
-import ReviewCard from '../../components/review/reviewCard';
-import ReviewCards from '../../components/review/reviewCards';
+import StarRating from '../../_components/startRating';
+import ReviewForm from '../../_components/review/reviewForm';
+import ReviewCards from '../../_components/review/reviewCards';
 
 const ProductDetails = () => {
   const [loading, setLoading] = useState(true);

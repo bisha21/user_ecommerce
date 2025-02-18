@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { PRODUCTS_ROUTE } from "../../constants/routes";
 import { FaArrowLeft } from "react-icons/fa";
-import Tittle from "../../components/Tittle";
-import ProductsForm from "../../components/products/ProductForm";
+import Tittle from "../../_components/Tittle";
+import ProductsForm from "../../_components/products/ProductForm";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../api/products";
 import { toast } from "react-toastify";

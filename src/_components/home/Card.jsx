@@ -1,26 +1,45 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { LOGIN_ROUTE } from "../../constants/routes";
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { LOGIN_ROUTE } from '../../constants/routes';
 
-export default function Card({ id, url, name, brand, price, category, ratingsAverage }) {
+export default function Card({
+  id,
+  url,
+  name,
+  brand,
+  price,
+  category,
+  ratingsAverage,
+}) {
   const user = useSelector((state) => state.auth.user);
 
   return (
-    <div className="w-full h-128 max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl duration-300">
+    <div className="w-[240px] h-[250px] bg-teal-100 rounded-lg shadow-md hover:shadow-xl duration-300">
       <Link to={`/products/${id}`}>
-        <img className=" mx-auto p-2 rounded-t-lg bg-gray-50" src={url} alt={name} width={150} height={150} />
+        <div className='flex items-center justify-center py-2 '>
+        <img
+          className=" mx-auto bg-gray-50 w-24 h-24 object-fit rounded-full"
+          src={url}
+          alt={name}
+         
+        />
+        </div>
       </Link>
       <div className="px-5 pb-5">
         <Link to={`/products/${id}`}>
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900">{name}</h5>
+          <h5 className="text-xl font-semibold tracking-tight text-gray-900">
+            {name}
+          </h5>
         </Link>
         <p className="text-sm text-gray-600">{brand}</p>
-        <div className="flex items-center mt-2.5 mb-5">
+        <div className="flex items-center mt-2.5 ">
           <div className="flex items-center space-x-1">
             {Array.from({ length: 5 }).map((_, index) => (
               <svg
                 key={index}
-                className={`w-4 h-4 ${index < ratingsAverage ? "text-yellow-300" : "text-gray-200"}`}
+                className={`w-3 h-3 ${
+                  index < ratingsAverage ? 'text-blue-700' : 'text-gray-200'
+                }`}
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -34,14 +53,13 @@ export default function Card({ id, url, name, brand, price, category, ratingsAve
             {ratingsAverage.toFixed(1)}
           </span>
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-900">${Math.floor(0.8 * price)}</span>
-          <Link
-            to={user ? `/products/${id}` : LOGIN_ROUTE}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            Buy Now
-          </Link>
+        <div className="flex flex-col">
+          <span className="text-xl font-bold text-gray-900">
+            ${Math.floor(0.8 * price)}
+          </span>
+          <span className="text-md font-bold text-gray-600 line-through">
+            ${Math.floor(0.8 * price)}
+          </span>
         </div>
       </div>
     </div>
