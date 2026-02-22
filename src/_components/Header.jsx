@@ -25,17 +25,20 @@ export default function Navbar() {
 
   const navLinkStyles = ({ isActive }) =>
     isActive
-      ? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0'
-      : 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0';
+      ? 'block py-2 px-3  bg-blue-100 rounded md:bg-transparent md:text-blue-100 md:p-0 text-[#e0e0e0]'
+      : 'block py-2 px-3 te rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 text-[#e0e0e0]';
 
   return (
-    <nav className="w-[100vw] over-flow-hidden shadow-xl bg-teal-500 sticky px-2 md:px-8 border-green-400 z-50 ">
+    <nav className="w-[100vw] over-flow-hidden shadow-xl bg-[#2F855A] sticky px-2 md:px-8 border-green-400   z-50 ">
       <div className="flex justify-between items-center py-2 md:py-4">
         {/* Logo Section */}
-        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link
+          to="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src={logo} alt="Shopify Logo" className="h-8 rounded-full" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            Shopify
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#e0e0e0]">
+            SandipShop
           </span>
         </Link>
 

@@ -1,9 +1,9 @@
-import { useForm } from "react-hook-form";
-import { addReview } from "../../api/review";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { FaStar } from "react-icons/fa";
-import { toast } from "react-toastify";
+import { useForm } from 'react-hook-form';
+import { addReview } from '../../api/review';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 export default function ReviewForm({ product }) {
   const userId = useSelector((store) => store.auth.user.id);
@@ -14,9 +14,10 @@ export default function ReviewForm({ product }) {
     try {
       const reviewData = { ...data, rating }; // Include rating in data
       await addReview(product._id, reviewData);
-      toast.success("Review added successfully!!");
+      toast.success('Review added successfully!!');
       window.location.reload();
     } catch (err) {
+      toast.error('Before adding a review, you must be purchase it.');
       console.log(err);
     }
   };
@@ -31,20 +32,22 @@ export default function ReviewForm({ product }) {
       className="w-1/2 mx-auto py-4 px-4 shadow"
       onSubmit={handleSubmit(onSubmit)}
     >
-        <h2 className="text-lg font-bold mb-4 text-center">Leave a Review for {product.name}</h2>
+      <h2 className="text-lg font-bold mb-4 text-center">
+        Leave a Review for {product.name}
+      </h2>
       {/* Hidden Inputs */}
       <input
         type="hidden"
         id="userId"
         value={userId}
-        {...register("userId", { required: "User ID is required." })}
+        {...register('userId', { required: 'User ID is required.' })}
         readOnly
       />
       <input
         type="hidden"
         id="productId"
         value={product._id}
-        {...register("productId", { required: "Product ID is required." })}
+        {...register('productId', { required: 'Product ID is required.' })}
         readOnly
       />
 
@@ -56,7 +59,7 @@ export default function ReviewForm({ product }) {
           id="review"
           name="review"
           className="w-full mt-1 py-1 px-2 rounded border"
-          {...register("review", { required: "Product review is required." })}
+          {...register('review', { required: 'Product review is required.' })}
         />
       </div>
 
@@ -68,11 +71,11 @@ export default function ReviewForm({ product }) {
             <span
               key={star}
               className={`cursor-pointer text-2xl ${
-                rating >= star ? "text-yellow-500" : "text-gray-300"
+                rating >= star ? 'text-yellow-500' : 'text-gray-300'
               }`}
               onClick={() => handleStarClick(star)}
             >
-              <FaStar size={40}/> 
+              <FaStar size={40} />
             </span>
           ))}
         </div>

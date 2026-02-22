@@ -21,6 +21,8 @@ import UnAuthLayout from "./layout/UnauthLayout";
 import Add from "./pages/products/Add";
 import EditProduct from "./pages/products/Edit";
 import Cart from "./pages/Cart";
+import Payment from "./pages/Payment";
+import PaymentSuccess from "./pages/PaymentSucess";
 
 export default function Routes() {
   const router = createBrowserRouter([
@@ -69,6 +71,14 @@ export default function Routes() {
               path: SHOPPING_CART_ROUTE,
               element: <Cart />,
             },
+            {
+              path:'payment/:id',
+              element:<Payment/>
+            },
+            {
+              path:"paymentsucess",
+              element:<PaymentSuccess/>
+            }
           ],
         },
         {

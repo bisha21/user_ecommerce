@@ -41,7 +41,7 @@ const NewArrival = () => {
 
   return (
     <Carousel
-      className="w-full max-w-6xl mx-auto bg-teal-100"
+      className="w-full max-w-6xl mx-auto bg-[#F0FFF4]"
       opts={{ loop: true }}
     plugins={[
         Autoplay({ delay: 3000, stopOnInteraction: false })

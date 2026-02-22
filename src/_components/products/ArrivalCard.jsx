@@ -7,7 +7,7 @@ const ArrivalCard = ({ product }) => {
   const { id, url, name, price } = product;
 
   return (
-    <Card className="group w-[200px] h-[220px] flex flex-col items-center overflow-hidden rounded-xl border bg-teal-100 p-3">
+    <Card className="group w-[200px] h-[220px] flex flex-col items-center overflow-hidden rounded-xl  bg-[#F0FFF4] p-3 border-none">
       <Link to={`/product/${id}`}>
         <div className='flex items-center justify-center'>
         <img

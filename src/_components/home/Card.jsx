@@ -14,15 +14,14 @@ export default function Card({
   const user = useSelector((state) => state.auth.user);
 
   return (
-    <div className="w-[240px] h-[250px] bg-teal-100 rounded-lg shadow-md hover:shadow-xl duration-300">
+    <div className="w-[240px] h-[250px] bg-bg-[#F0FFF4] rounded-lg shadow-md hover:shadow-xl duration-300">
       <Link to={`/products/${id}`}>
-        <div className='flex items-center justify-center py-2 '>
-        <img
-          className=" mx-auto bg-gray-50 w-24 h-24 object-fit rounded-full"
-          src={url}
-          alt={name}
-         
-        />
+        <div className="flex items-center justify-center py-2 ">
+          <img
+            className=" mx-auto bg-gray-50 w-24 h-24 object-fit rounded-full"
+            src={url}
+            alt={name}
+          />
         </div>
       </Link>
       <div className="px-5 pb-5">

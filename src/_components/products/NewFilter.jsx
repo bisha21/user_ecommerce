@@ -48,11 +48,11 @@ const FilterProduct = () => {
   }
 
   return (
-    <div className="w-full p-3 rounded-md bg-teal-100/30">
+    <div className="w-full p-3 rounded-md bg-[#F0FFF4]">
       <h1 className="font-bold text-lg">Filter Product</h1>
       <button
         onClick={handleReset}
-        className="bg-teal-600 text-white px-3 py-1 rounded-md mt-3"
+        className="bg-[#2F855A] text-white px-3 py-1 rounded-md mt-3"
       >
         Reset Filters
       </button>
@@ -70,7 +70,11 @@ const FilterProduct = () => {
               return (
                 <div className="flex items-center space-x-2 my-2" key={idx}>
                   {/* Ensure the checked state affects text color */}
-                  <RadioGroupItem value={String(item)} id={itemId} className="peer" />
+                  <RadioGroupItem
+                    value={String(item)}
+                    id={itemId}
+                    className="peer"
+                  />
                   <Label htmlFor={itemId} className="peer-checked:text-black">
                     {item}
                   </Label>

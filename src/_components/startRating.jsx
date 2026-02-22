@@ -9,12 +9,12 @@ const StarRating = ({ rating,size }) => {
 
   // Push full stars
   for (let i = 0; i < fullStars; i++) {
-    stars.push(<FaStar key={`full-${i}`} className="text-orange-400"  size={size} />);
+    stars.push(<FaStar key={`full-${i}`} className="text-[#F6AD55]"  size={size} />);
   }
 
   // Push half star (if applicable)
   if (hasHalfStar) {
-    stars.push(<FaStarHalfAlt key="half" className="text-orange-400" size={size} />);
+    stars.push(<FaStarHalfAlt key="half" className="text-[#F6AD55]" size={size} />);
   }
 
   // Push empty stars

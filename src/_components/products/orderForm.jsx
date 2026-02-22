@@ -5,11 +5,13 @@ import Spinner from '../Spinner';
 import createOrder from '../../api/order';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadStripe } from '@stripe/stripe-js';
+import { useNavigate } from 'react-router';
 
  export const OrderForm = ({ products, onClose }) => {
   const authToken = localStorage.getItem('authToken');
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
   const {
@@ -22,29 +24,31 @@ import { loadStripe } from '@stripe/stripe-js';
     console.log(data);
     setLoading(true);
     try {
-      await createOrder(data);
+      const response= await createOrder(data);
+      console.log("HII",response.data);
       toast.success('Order created successfully!');
+      navigate(`/payment/${response.data.orderId}`);
       
-      const response = await fetch(`http://localhost:3000/api/order/checkout-sessions/${products._id}`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ quantity: products.quantity }),
-      });
+      // const response = await fetch(`http://localhost:3000/api/order/checkout-sessions/${products._id}`, {
+      //   method: 'POST',
+      //   headers: {
+      //     Authorization: `Bearer ${authToken}`,
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ quantity: products.quantity }),
+      // });
   
-      if (!response.ok) {
-        throw new Error('Failed to create checkout session');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Failed to create checkout session');
+      // }
   
-      const { session } = await response.json();
-      if (session?.id) {
-        const stripe = await loadStripe('pk_test_51QfNZyKaOtF0Bun2pzEP5yXIgDKXINu5atezNFdQB1vZaygvK7Fcsf1lk59MrP9OUwaNYjQr6Zoj96x8uwFxKzLi00HlTtAMoO');
-        await stripe.redirectToCheckout({ sessionId: session.id });
-      } else {
-        throw new Error('Invalid session ID');
-      }
+      // const { session } = await response.json();
+      // if (session?.id) {
+      //   const stripe = await loadStripe('pk_test_51QfNZyKaOtF0Bun2pzEP5yXIgDKXINu5atezNFdQB1vZaygvK7Fcsf1lk59MrP9OUwaNYjQr6Zoj96x8uwFxKzLi00HlTtAMoO');
+      //   await stripe.redirectToCheckout({ sessionId: session.id });
+      // } else {
+      //   throw new Error('Invalid session ID');
+      // }
     } catch (error) {
       toast.error(error.message || 'Error processing payment.');
       console.error(error);

@@ -9,29 +9,29 @@ import FAQAccordion from "@/_components/home/Accordian";
 export default function Home() {
 
   return (
-    <>
+    <div className="bg-[#F0FFF4]">
       <Hero />
-     <section className="  bg-teal-100 m mx-auto">
+     <section className="  bg-[#F0FFF4] m mx-auto">
       <Tittle label="Top Buyer" />
       <NewArrival />
      </section>
-      <section className="py-12 bg-teal-200/50">
+      <section className="py-12 bg-[#F0FFF4]">
         <CatagorizedProduct category="Man"  />
       </section>
       <section className="py-12 bg-teal-100/50">
         <CatagorizedProduct category="Women" />
       </section>
-      <section className="py-12 bg-teal-200/50">
+      <section className="py-12 bg-[#F0FFF4]">
         <CatagorizedProduct category="Kids" />
       </section>
-      <section className=" bg-teal-100/50">
+      <section className=" bg-[#F0FFF4]">
         <ReviewCard  />
       </section>
-      <section className="bg-teal-200/50">
+      <section className="bg-[#F0FFF4]">
         <FAQAccordion/>
       </section>
 
     
-    </>
+    </div>
   )
 }

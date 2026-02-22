@@ -1,17 +1,13 @@
 import { useEffect } from 'react';
 import ProductCard from '../../_components/products/ProductCard';
 import Tittle from '../../_components/Tittle';
-import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getAllProducts,
   getAllCategory,
 } from '../../redux/products/ProductsActions';
-import ProductFilter from '../../_components/products/Filter';
-import { resetQuery } from '../../redux/products/ProductSlice';
-import axios from 'axios';
-import NewArrivial from '../../_components/products/NewArrivial';
+
 import FilterProduct from '@/_components/products/NewFilter';
 import Search from '@/_components/products/Search';
 
@@ -36,7 +32,7 @@ export default function List() {
   }
 
   return (
-    <div className="bg-slate- min-h-svh mt-2 max-w-[1500px] mx-auto bg-teal-100/30">
+    <div className=" min-h-svh mt-2 max-w-[1500px] mx-auto bg-[#F0FFF4]">
       
         {/* <div>
           <Tittle label="New Arrivial" className="text-2xl" />

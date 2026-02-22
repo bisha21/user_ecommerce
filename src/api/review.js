@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useSelector } from "react-redux";
 import config from "../config/config";
 
  export const addReview = async (id,data) => {

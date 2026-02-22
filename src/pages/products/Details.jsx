@@ -48,6 +48,7 @@ const ProductDetails = () => {
         <Spinner className="h-16 w-16" />
       </div>
     );
+    console.log("its our product reviews", product.reviews);
 
   return (
     <section className="p-5 m-4 max-w-7xl mx-auto bg-green-100">
@@ -97,8 +98,10 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="flex  flex-col justify-center items-center gap-8 mt-8 p-7">
-        <ReviewCards review={product.reviews} />
+
+      <div className="flex  flex-col justify-center items-center gap-8 mt-8 p-7 ">
+      <ReviewCards reviews={product.reviews} />
+
         <ReviewForm product={product} />
       </div>
     </section>

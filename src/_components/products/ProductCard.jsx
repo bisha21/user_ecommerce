@@ -15,12 +15,12 @@ export default function ProductCard({
   const { user } = useSelector((store) => store.auth);
 
   return (
-    <div className="w-full h-72 max-w-sm bg-teal-100/30 border  rounded-lg shadow-xl  hover:shadow-xl duration-300">
+    <div className="w-full h-72 max-w-sm bg-[#F0FFF4]   rounded-lg  shadow-md  hover:shadow-xl duration-300">
       {/* <div className='text-right text-sm font-semibold text-gray-600 px-5 py-2'>
         {category}
       </div> */}
       <Link to={`/products/${id}`}>
-        <div className="overflow-hidden bg-teal-100/30 rounded-lg">
+        <div className="overflow-hidden bg-[#F0FFF4]  rounded-lg">
           <img
             className="object-fit mx-auto  h-32 w-32 rounded-full" // Fixed height and object-fit to cover
             src={url}
@@ -37,26 +37,26 @@ export default function ProductCard({
         <p className="text-sm text-gray-600">{brand}</p>
         <div className="flex items-center mt-2.5 mb-5">
           <div className="flex items-center space-x-1">
-           <StarRating rating={ratingsAverage} size={20} />
+            <StarRating rating={ratingsAverage} size={20} color="#F0FFF4" />
           </div>
 
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">
+          <span className="bg-blue-100 text-[#F6AD55] text-xs font-semibold px-2.5 py-0.5 rounded ms-3">
             {ratingsAverage.toFixed(1)}
           </span>
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl font-semibold text-gray-900">
-              ${Math.floor(0.8 * price)}
+              Rs{Math.floor(0.8 * price)}
             </span>
             <span className="text-xl font-semi-bold text-gray-600 line-through">
-              ${Math.floor(price)}
+              Rs{Math.floor(price)}
             </span>
           </div>
 
           <Link
             to={user ? `/products/${id}` : '/login'}
-            className="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            className="text-white bg-[#2F855A] hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Buy Now
           </Link>
